@@ -1,31 +1,29 @@
-#!/bin/bash
-# build.sh — Build IPHarvester and drop it where it belongs
-
+#!/usr/bin/env bash
 set -e
 
 BINARY="ipharvester"
 VERSION="v1.0"
-TARGET_DIR="/usr/local/bin"
-BUILD_DIR=$(mktemp -d)
+TARGET="/usr/local/bin/$BINARY"
 
-echo "Building $BINARY $VERSION with Go $(go version | awk '{print $3,$4}')"
+echo "Building IPHarvester $VERSION"
+echo "Go: $(go version | awk '{print $3,$4}')"
 
-# Build static binary (no CGO bullshit)
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags="-s -w -X main.version=$VERSION" -o "$BUILD_DIR/$BINARY" .
+# Build with correct version injected
+CGO_ENABLED=0 go build \
+    -ldflags="-s -w -X github.com/cristophercervantes/IPHarvester/cmd.version=$VERSION" \
+    -o "$BINARY"
 
-# Strip & compress (optional, makes it tiny)
-strip "$BUILD_DIR/$BINARY" 2>/dev/null || true
-upx -9 "$BUILD_DIR/$BINARY" 2>/dev/null || echo "[!] upx not installed, skipping compression"
+# Optional UPX
+if command -v upx &>/dev/null; then
+    echo "Compressing with UPX..."
+    upx --best --lzma "$BINARY" >/dev/null 2>&1
+fi
 
-# Install to system (root required)
-echo "Installing $BINARY to $TARGET_DIR"
-sudo install -m 755 "$BUILD_DIR/$BINARY" "$TARGET_DIR/"
-
-# Cleanup
-rm -rf "$BUILD_DIR"
+echo "Installing to $TARGET"
+sudo install -m 755 "$BINARY" "$TARGET"
+rm -f "$BINARY"
 
 echo
-echo "IPHarvester $VERSION installed globally!"
-echo "Run: $BINARY version"
+echo "ipharvester $VERSION installed."
 echo
-$BINARY version
+$TARGET version
