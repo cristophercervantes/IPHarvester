@@ -4,7 +4,7 @@
 set -e
 
 BINARY="ipharvester"
-VERSION="v0.0.2"
+VERSION="v1.0"
 TARGET_DIR="/usr/local/bin"
 BUILD_DIR=$(mktemp -d)
 
