@@ -67,11 +67,12 @@ sudo ./build.sh
 ```
 
 ### Disclaimer
-**This tool only queries publicly available data.**
+**This tool only queries publicly available data.**  
 **Use responsibly. Use proxies/VPS when hammering hard.**
 
 ### License
 **MIT © 2025 cristophercervantes**
+
 **IPHarvester v1.0 — Harvest or be harvested.**
 
 
