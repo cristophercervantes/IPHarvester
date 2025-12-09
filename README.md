@@ -9,9 +9,9 @@
     IPHarvester V1.0
 ```
 
-***Zero-API public search engine harvester***
-***Shodan · ZoomEye · ViewDNS → raw IPs. No keys. No credits. No limits.***
-***Built for bug bounty, red team, and anyone who needs thousands of IPs right now.***
+**Zero-API public search engine harvester**  
+**Shodan · ZoomEye · ViewDNS → raw IPs. No keys. No credits. No limits.**  
+**Built for bug bounty, red team, and anyone who needs thousands of IPs right now.**
 
 ## Install (one command)
 ```
