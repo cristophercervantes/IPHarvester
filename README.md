@@ -24,9 +24,13 @@ go install github.com/cristophercervantes/IPHarvester@latest
 ```
 Binary lands in /usr/local/bin/ipharvester
 
-## Commands
-***Command***         ***What it does***
-reap,Shodan harvester (auto-bypasses 1000-result limit)
-zm,ZoomEye multi-page ripper
-history,ViewDNS historical IP lookup
+### Commands
+
+| Command    | Description                                              |
+|------------|----------------------------------------------------------|
+| `reap`     | Shodan harvester (auto-bypasses 1000-result limit)       |
+| `zm`       | ZoomEye multi-page ripper                                |
+| `history`  | ViewDNS historical IP lookup                             |
+
+
 
