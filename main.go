@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
-	banner.PrintBanner()
+	// Show banner once, at startup (unless -s/--silent)
+	if !cmd.IsSilent() {
+		banner.PrintBanner()
+	}
 	cmd.Execute()
 }
