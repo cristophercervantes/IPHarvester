@@ -15,7 +15,7 @@
 
 ## Install (one command) (Must be a root user: sudo su)
 ```
-git clone https://github.com/cristophercervantes/IPHarvester.git;cd IPHarvester;bash ./build.sh
+git clone https://github.com/cristophercervantes/IPHarvester.git;cd IPHarvester;bash build.sh
 ```
 
 ### Or with Go (1.23+):
