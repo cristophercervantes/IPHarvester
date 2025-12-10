@@ -13,9 +13,9 @@
 **Shodan · ZoomEye · ViewDNS → raw IPs. No keys. No credits. No limits.**  
 **Built for bug bounty, red team, and anyone who needs thousands of IPs right now.**
 
-## Install (one command)
+## Install (one command) (Must be a root user: sudo su)
 ```
-git clone https://github.com/cristophercervantes/IPHarvester.git && cd IPHarvester && sudo ./build.sh
+git clone https://github.com/cristophercervantes/IPHarvester.git;cd IPHarvester;bash ./build.sh
 ```
 
 ### Or with Go (1.23+):
